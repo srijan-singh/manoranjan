@@ -35,7 +35,8 @@ async def index():
 # Movie
 @app.get("/movie/*")
 async def show_all_movie():
-    return {"response" : "Wrong Password"}
+    response = getAllMovie()
+    return response
 
 @app.get("/movie/")
 async def show_movie(id : str):

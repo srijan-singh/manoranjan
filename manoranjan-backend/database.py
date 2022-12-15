@@ -18,7 +18,6 @@ def getAllMovie():
     for movie in stack:
 
         json = {
-            "_id"        : movie["_id"],
             "name"       : movie["name"],
             "tag"        : movie["tag"],
             "server_url" : movie["server_url"],
@@ -34,7 +33,6 @@ def getMovie(_id : str):
         movie = movie_collection.find_one({"_id":_id})
 
         json = {
-            "_id"        : movie["_id"],
             "name"       : movie["name"],
             "tag"        : movie["tag"],
             "server_url" : movie["server_url"],
