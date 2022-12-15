@@ -24,7 +24,7 @@ def getAllMovie():
             "year"       : movie["year"],
         }
 
-        movie_list.append(movie)
+        movie_list.append(json)
 
     return movie_list
 

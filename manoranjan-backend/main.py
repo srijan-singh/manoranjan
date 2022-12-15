@@ -28,6 +28,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/")
 async def index():
     return {"response" : "Manoranjan"}
@@ -38,6 +39,7 @@ async def show_all_movie():
     response = getAllMovie()
     return response
 
+
 @app.get("/movie/")
 async def show_movie(id : str):
     response = getMovie(id)
@@ -47,10 +49,11 @@ async def show_movie(id : str):
 
     return {"response" : "Not Available"}
 
+
 @app.post("/add/movie")
 async def add_movie(password : str, request : Movie):
-    if(password == _password):
-        return getAllMovie()
+    if(password != _password):
+        return {"response" : "Invalid Password!"}
 
     if(getMovie(request.getId)):
         return {"response" : "ID Already Exist!"}
@@ -58,12 +61,14 @@ async def add_movie(password : str, request : Movie):
     response = postMovie(request)
     return {"response":"Successfully Added!"}
 
+
 @app.put("update/movie")
 async def update_movie(password : str, id : str, request : Movie):
-    if(password == _password):
-        return getAllMovie()
+    if(password != _password):
+        return {"response" : "Invalid Password!"}
 
     response = putMovie(id, request.name, request.server_url, request.year)
+    
     if(response):
         return {"response" : "Successfully Updated!"}
 
