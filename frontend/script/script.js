@@ -35,7 +35,7 @@ function show(data) {
         <a href="${r.server_url}">    
         <div class="container">
         <div class ="content">
-        Movie ${r.name}
+        ${r.name}
 		<br>
         Tag ${r.tag}
         <br>
