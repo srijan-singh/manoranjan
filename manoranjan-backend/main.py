@@ -34,9 +34,7 @@ async def index():
 
 # Movie
 @app.get("/movie/*")
-async def show_all_movie(password : str):
-    if(password == _password):
-        return getAllMovie()
+async def show_all_movie():
     return {"response" : "Wrong Password"}
 
 @app.get("/movie/")
@@ -49,7 +47,9 @@ async def show_movie(id : str):
     return {"response" : "Not Available"}
 
 @app.post("/add/movie")
-async def add_movie(request : Movie):
+async def add_movie(password : str, request : Movie):
+    if(password == _password):
+        return getAllMovie()
 
     if(getMovie(request.getId)):
         return {"response" : "ID Already Exist!"}
@@ -58,7 +58,10 @@ async def add_movie(request : Movie):
     return {"response":"Successfully Added!"}
 
 @app.put("update/movie")
-async def update_movie(id : str, request : Movie):
+async def update_movie(password : str, id : str, request : Movie):
+    if(password == _password):
+        return getAllMovie()
+
     response = putMovie(id, request.name, request.server_url, request.year)
     if(response):
         return {"response" : "Successfully Updated!"}
