@@ -1,0 +1,2 @@
+hawkeye = https://www.2embed.to/embed/tmdb/tv?id=88329&s=1&e=1
+moonknight = https://www.2embed.to/embed/tmdb/tv?id=92749&s=1&e=1
