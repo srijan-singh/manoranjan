@@ -1,6 +1,6 @@
 //api url
 const api_url =
-    'https://manoranjan.deta.dev/movie/*?password=%40gh8%2145A';
+    'https://manoranjan.deta.dev/movie/*';
 
 // Defining async function
 async function getapi(url) {
