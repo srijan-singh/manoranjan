@@ -32,7 +32,7 @@ function show(data) {
 	for (let r of data) {
 		tab += 
         `    
-        <a href="${r.server_url}">    
+        <a href="${r.server_url}">   
         <div class="container">
         <div class ="content">
         ${r.name}
